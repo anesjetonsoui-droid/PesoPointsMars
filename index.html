@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1a472a">
+    <title>PesoPoints - Earn PHP Rewards!</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="authPage" class="auth-container">
+        <div class="auth-box">
+            <div class="app-icon">💰</div>
+            <h2>PESO POINTS</h2>
+            <p class="tagline">Complete Quests, Take Quizzes & Earn PHP</p>
+            <div id="authForm">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Enter username">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                </div>
+                <button class="auth-btn" id="authButton">Login</button>
+                <div class="admin-note">
+                    👑 Admin Account: Admin2026<br>
+                    🔐 Password: Marceljablo2003@
+                </div>
+                <div class="register-note">
+                    ⚠️ Registration is disabled. Accounts are created by administrators only.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="appContainer" class="app-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <div class="mobile-title">PesoPoints</div>
+            <div class="mobile-points" id="mobilePoints">0 pts</div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>💰 PESO POINTS</h3>
+                <p>Complete Quests & Earn PHP</p>
+            </div>
+            <div class="user-info">
+                <div id="sidebarUsername">Loading...</div>
+                <div id="sidebarRole"></div>
+                <div id="sidebarReferral"></div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active" data-page="dashboard">📊 Dashboard</li>
+                <li class="nav-item" data-page="quests">📋 Available Quests</li>
+                <li class="nav-item" data-page="quiz">🎮 Programming Quiz</li>
+                <li class="nav-item" data-page="my-submissions">📤 My Submissions</li>
+                <li class="nav-item" data-page="convert">💱 Convert Points</li>
+                <li class="nav-item" data-page="withdraw">🏦 Withdraw</li>
+                <li class="nav-item" data-page="referral">🤝 Referral Program</li>
+                <li class="nav-item admin-only" data-page="admin-dashboard" style="display: none;">📊 Admin Dashboard</li>
+                <li class="nav-item admin-only" data-page="pending-accounts" style="display: none;">⏳ Pending Accounts</li>
+                <li class="nav-item admin-only" data-page="create-account" style="display: none;">➕ Create Account</li>
+                <li class="nav-item admin-only" data-page="manage-users" style="display: none;">👥 Manage Users</li>
+                <li class="nav-item admin-only" data-page="manage-quests" style="display: none;">✏️ Manage Quests</li>
+                <li class="nav-item admin-only" data-page="approve-submissions" style="display: none;">✅ Approve Submissions</li>
+                <li class="nav-item admin-only" data-page="approve-withdrawals" style="display: none;">💰 Approve Withdrawals</li>
+                <li class="nav-item moderator-only" data-page="create-account" style="display: none;">➕ Create Account</li>
+                <li class="nav-item moderator-only" data-page="pending-accounts" style="display: none;">⏳ My Pending Requests</li>
+                <li class="nav-item moderator-only" data-page="approve-submissions" style="display: none;">✅ Approve Submissions</li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div id="pageContent"></div>
+        </div>
+        
+        <!-- Bottom Navigation (Mobile) -->
+        <div class="bottom-nav">
+            <div class="bottom-nav-item" data-page="dashboard">📊<span>Home</span></div>
+            <div class="bottom-nav-item" data-page="quests">📋<span>Quests</span></div>
+            <div class="bottom-nav-item" data-page="quiz">🎮<span>Quiz</span></div>
+            <div class="bottom-nav-item" data-page="convert">💱<span>Convert</span></div>
+            <div class="bottom-nav-item" data-page="referral">🤝<span>Refer</span></div>
+        </div>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/referral.js"></script>
+    <script src="js/quests.js"></script>
+    <script src="js/questions_database.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
